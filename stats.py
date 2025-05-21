@@ -4,7 +4,7 @@ def no_words(cnt):
 	return len_num
 
 
-def no_chr(char):
+def ch_dict(char):
 	char_list = char.split()
 	char_string = ''
 	char_set = set()
@@ -24,8 +24,13 @@ def no_chr(char):
 				count += 1
 		char_dict[c] = count
 
+	char_dict = dict(sorted(char_dict.items(), key=lambda item: item[1], reverse = True))
 
-	print(char_dict)
+	for c in char_dict:
+		if not c.isalpha():
+			pass
+		else:
+			print(f"{c}: {char_dict[c]}")
 
 
 
